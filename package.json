@@ -1,0 +1,9 @@
+{
+  "name": "openiq-v12",
+  "version": "0.12.6",
+  "private": true,
+  "description": "Experimental OpenIQ prototype with calibration, reliability, precision and independent validation workflow",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
