@@ -1,0 +1,2 @@
+# Righteousness-
+Open IQ challenge 
