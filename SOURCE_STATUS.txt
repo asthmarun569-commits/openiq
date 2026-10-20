@@ -1,0 +1,11 @@
+OpenIQ latest available package — v0.13.1 evidence study kit
+Prepared: 2026-10-20
+
+IMPORTANT SOURCE STATUS
+- This archive is rebuilt from the newest OpenIQ files currently available in this working session (v0.13.1 evidence study kit).
+- It has NOT been synced against the live GitHub repository in this session. Therefore it must NOT be described as an exact copy of the latest live website source.
+- The archive contains website files from that package plus research/validation documentation. It is not evidence that these files are deployed.
+- Synthetic/demo data is for pipeline testing only and is not empirical evidence.
+- OpenIQ has not been scientifically validated as an IQ test. Do not report IQ accuracy from this package.
+
+Start with README_EVIDENCE_STUDY_KIT_v0.13.1.md and EVIDENCE_STUDY_PROTOCOL_v0.13.1.md.

@@ -1,0 +1,2 @@
+Rows read: 100; rejected/ineligible: 100; eligible pairs: 0
+No valid independent IQ-reference pairs. No psychometric evidence or accuracy claim can be calculated.
