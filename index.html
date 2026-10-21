@@ -227,5 +227,100 @@ $("exportCsv").onclick=()=>{const rows=[["id","domain","difficulty","prompt","op
 $("resetBank").onclick=()=>{if(confirm("Replace current question bank with the original 12-question demo bank?")){bank=structuredCloneSafe(DEMO);$("editTitle").value="OpenIQ reasoning practice";$("editVersion").value="editable-recovery-1.0";$("dataStatus").textContent="Demo question bank restored."; $("itemCount").textContent=`${bank.length} questions available`}};
 $("importText").onclick=()=>{try{const obj=JSON.parse($("jsonText").value);if(importBankObject(obj))$("jsonText").value=""}catch(e){$("dataStatus").textContent="Could not parse JSON. Check that the file is valid JSON."}};
 $("importFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const obj=JSON.parse(await f.text());importBankObject(obj)}catch(err){$("dataStatus").textContent="Could not read valid JSON from that file."}e.target.value=""};
+
+const OPENIQ_FUNCTION_URL = "https://htoyqrjtnossksjkkruo.supabase.co/functions/v1/generate-questions";
+
+$("generateAI").onclick = async () => {
+  const key = $("aiAnonKey").value.trim();
+  const count = Number($("aiCount").value);
+  const subject = $("aiSubject").value.trim() || "Reasoning practice";
+  const topic = $("aiTopic").value.trim() || "Mixed topics";
+  const difficulty = $("aiDifficulty").value;
+  const status = $("aiStatus");
+  const button = $("generateAI");
+
+  if (!key) {
+    status.textContent = "Enter your Supabase publishable key first.";
+    return;
+  }
+  if (!Number.isInteger(count) || count < 1 || count > 50) {
+    status.textContent = "Enter a whole number from 1 to 50.";
+    return;
+  }
+
+  button.disabled = true;
+  status.textContent = "Generating questions...";
+
+  try {
+    const response = await fetch(OPENIQ_FUNCTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": key,
+        "Authorization": "Bearer " + key
+      },
+      body: JSON.stringify({
+        subject, topic, difficulty, count,
+        previousQuestions: bank.map(q => q.prompt).slice(-100)
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Request failed: " + response.status);
+    }
+    if (!Array.isArray(data.questions) || data.questions.length !== count) {
+      throw new Error("Unexpected response. Please try again.");
+    }
+
+    const existing = new Set(bank.map(q => q.id));
+    let nextNum = bank.length + 1;
+
+    const generated = data.questions.map(q => {
+      let id;
+      do {
+        id = "AI-" + String(nextNum++).padStart(4, "0");
+      } while (existing.has(id));
+      existing.add(id);
+
+      const notes = Array.isArray(q.optionExplanations)
+        ? q.optionExplanations
+        : [];
+      const explanation = String(q.explanation || "") +
+        (notes.length
+          ? "\n\nOption explanations:\n" +
+            notes.map((e, i) => String.fromCharCode(65 + i) + ". " + e).join("\n")
+          : "");
+
+      return {
+        id,
+        domain: [q.subject || subject, q.topic || topic].join(" — "),
+        difficulty: String(q.difficulty || difficulty).toLowerCase(),
+        prompt: String(q.question || ""),
+        options: Array.isArray(q.options) ? q.options.map(String) : [],
+        answer: Number(q.correctIndex),
+        explanation
+      };
+    });
+
+    const errors = validate(generated);
+    if (errors.length) {
+      throw new Error("Generated questions failed validation. Try again.");
+    }
+
+    bank.push(...generated);
+    $("itemCount").textContent = bank.length + " questions available";
+    renderEditor();
+    status.textContent = "Added " + generated.length +
+      " questions. Total: " + bank.length +
+      ". Review them and export a backup.";
+  } catch (err) {
+    status.textContent = "Generation failed: " +
+      (err.message || "Please try again.");
+  } finally {
+    button.disabled = false;
+  }
+};
 </script>
 </body></html>
