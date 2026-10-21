@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 const corsHeaders = {
@@ -149,7 +148,11 @@ ${previousQuestions.join("\n")}
     if (!aiResponse.ok) {
       const providerError = await aiResponse.text();
       console.error("AI provider returned an error:", providerError);
-
+console.error("OpenAI HTTP status:", aiResponse.status);
+console.error(
+  "OpenAI error summary:",
+  providerError.slice(0, 1000)
+);
       return jsonResponse({
         error: "Question generation failed. Check the AI service configuration and try again.",
       }, 502);
