@@ -79,6 +79,46 @@ main{padding:28px 0 60px}.card{background:var(--panel);border:1px solid var(--li
 <section id="editor" class="card hidden">
 <h1>Question editor</h1>
 <p>Changes apply to this browser session. Export the question bank to keep a backup. You can add one question or generate batches without a fixed app-level question limit. Every question must have a prompt, a domain, four non-empty options and one valid answer key.</p>
+<div class="question-edit">
+  <h2>AI question generator</h2>
+  <p>Generate original multiple-choice questions with answer keys and explanations. Generate 1–50 questions per batch and repeat as needed. Review every question before using it. This is not a validated IQ test.</p>
+
+  <div class="field">
+    <label for="aiAnonKey">Supabase publishable key</label>
+    <input id="aiAnonKey" type="password" autocomplete="off" placeholder="Paste your Supabase publishable key">
+  </div>
+  <p class="muted">Use only the publishable key from your Supabase project. Never enter a secret or service-role key.</p>
+
+  <div class="grid">
+    <div class="field">
+      <label for="aiSubject">Subject</label>
+      <input id="aiSubject" maxlength="150" value="Reasoning practice">
+    </div>
+    <div class="field">
+      <label for="aiTopic">Topic</label>
+      <input id="aiTopic" maxlength="200" value="Verbal, numerical, logical and pattern reasoning">
+    </div>
+    <div class="field">
+      <label for="aiDifficulty">Difficulty</label>
+      <select id="aiDifficulty">
+        <option>Easy</option>
+        <option selected>Medium</option>
+        <option>Hard</option>
+        <option>Mixed</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="aiCount">Questions per batch (1–50)</label>
+      <input id="aiCount" type="number" min="1" max="50" step="1" value="10" inputmode="numeric">
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="generateAI" class="primary">Generate questions</button>
+  </div>
+  <div id="aiStatus" class="status" role="status" aria-live="polite"></div>
+   </div>
+   
 <div class="grid">
 <div class="field"><label for="editTitle">Assessment title</label><input id="editTitle" value="OpenIQ reasoning practice"></div>
 <div class="field"><label for="editVersion">Version label</label><input id="editVersion" value="editable-recovery-1.0"></div>
