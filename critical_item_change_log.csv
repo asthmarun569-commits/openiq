@@ -1,0 +1,8 @@
+item_id,status,keyed_answer,issue_addressed,independent_review_required
+AI-0013,draft,CFXCPVCIG,Rewritten to replace an unsolved/inconsistent example cipher with a fully specified rule. Must be independently reviewed.,yes
+AI-0018,draft,"P, Q, R, T, S",Rewritten with constraints that determine one exact order; independent review still required.,yes
+AI-0019,draft,83 - 60,Rewritten so the stated classification rule is explicit and exactly one option differs.,yes
+AI-0020,draft,E,Rewritten to remove the prior contradictory/underconstrained seating inference. This version is very easy and should be replaced with a genuinely discriminating seating item before research use.,yes
+AI-0022,draft,M $ K # N,Corrected the definition of $ to brother so the keyed expression follows the stated relationships. Independent review still required.,yes
+AI-0023,draft,3578,Rewritten to use a consistent one-to-one letter-digit mapping and examples that agree with it.,yes
+AI-0032,draft,Bottom-middle,Replaced the item requiring an absent visual stimulus with a fully specified text-only spatial sequence.,yes
