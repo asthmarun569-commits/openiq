@@ -1,6 +1,0 @@
-OpenIQ recreated recovery build
-- Adds root index.html for GitHub Pages.
-- Static-only, no database connection.
-- 12 demonstration questions; raw score only.
-- Includes optional local JSON export.
-- Explicit disclaimer: not a validated IQ test.
