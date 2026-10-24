@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="OpenIQ is a transparent, community-minded reasoning assessment research project. Practice, inspect the methods, and help improve the question bank.">
+<title>OpenIQ 2.3 — Reasoning, Open to Everyone</title>
+<style>
+:root{color-scheme:light;--ink:#172033;--muted:#596579;--paper:#f6f8fc;--card:#fff;--line:#e1e7f0;--brand:#4258d6;--brand2:#273aa8;--mint:#dff8ef;--gold:#fff1cc;--rose:#ffebeb;--shadow:0 12px 32px #15254b0d;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--brand2)}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}.skip{position:absolute;left:-9999px;top:0;background:white;padding:1rem;z-index:10}.skip:focus{left:1rem}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.topbar{background:#101827;color:white;border-bottom:1px solid #ffffff22}.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:16px 0}.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:white;font-weight:850;letter-spacing:-.04em;font-size:1.25rem}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#7182ff;color:white;font-weight:900}.navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.navlinks a{color:#dce4ff;text-decoration:none;font-size:.92rem}.navlinks a:hover{text-decoration:underline}.hero{background:radial-gradient(ellipse at 85% 15%,#3549a8 0%,transparent 38%),linear-gradient(125deg,#101827,#1d2b48);color:white;padding:70px 0 62px}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:#aebcff}.hero h1{font-size:clamp(2.4rem,6vw,4.7rem);line-height:1.03;letter-spacing:-.06em;margin:.7rem 0 1.1rem;max-width:760px}.hero p{font-size:1.12rem;color:#d6def3;max-width:680px}.hero .highlight{color:#c5f5e5}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:12px;padding:12px 17px;font-weight:750;text-decoration:none;transition:transform .15s,background .15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--brand);color:white}.primary:hover{background:var(--brand2)}.light{background:white;color:#172033}.outline{border-color:#ffffff55;color:white;background:transparent}.soft{background:#edf0ff;color:#273aa8}.danger{background:#fff0f0;color:#9f2424}.hero-note{border:1px solid #ffffff26;border-radius:22px;background:#ffffff0b;padding:24px}.hero-note strong{font-size:1.05rem}.hero-note ul{padding-left:1.2rem;color:#d6def3;margin-bottom:0}.hero-note li{margin:.55rem 0}.notice{padding:14px 16px;border-radius:14px;background:var(--gold);border:1px solid #f0d78b;color:#4e3b0c;font-size:.94rem}.notice strong{display:block;margin-bottom:2px}.section{padding:58px 0;scroll-margin-top:18px}.section.alt{background:#eef2f9}.section-head{max-width:760px;margin-bottom:26px}.section-head h2{font-size:clamp(1.8rem,4vw,2.65rem);letter-spacing:-.045em;line-height:1.12;margin:0 0 10px}.section-head p{color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}.card h3{margin:0 0 8px;font-size:1.1rem;letter-spacing:-.02em}.card p{margin:0;color:var(--muted)}.iconbox{width:42px;height:42px;border-radius:13px;background:#edf0ff;color:var(--brand2);display:grid;place-items:center;font-size:1.25rem;margin-bottom:15px}.tag{display:inline-flex;align-items:center;border-radius:999px;background:#edf0ff;color:#293aab;padding:4px 9px;font-size:.78rem;font-weight:800}.assessment-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}.sidecard{position:sticky;top:16px}.progress{height:8px;background:#e9edf6;border-radius:99px;overflow:hidden;margin:10px 0 18px}.progress span{display:block;height:100%;background:var(--brand);width:0;transition:width .2s}.question-list{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.qjump{padding:8px 0;border:1px solid var(--line);background:white;border-radius:9px;color:var(--ink);font-weight:750}.qjump.current{background:#e9edff;border-color:var(--brand);color:var(--brand2)}.qjump.answered{border-color:#66b99c;background:#e8fbf3}.question-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.question-text{font-size:1.35rem;font-weight:780;line-height:1.35;letter-spacing:-.025em;margin:18px 0 20px}.answers{display:grid;gap:10px}.answer{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px;border:1px solid var(--line);border-radius:13px;background:white;color:var(--ink);width:100%}.answer:hover{border-color:#8794ef;background:#f9faff}.answer.selected{border:2px solid var(--brand);background:#f1f3ff;padding:13px}.letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#f0f2f7;font-weight:800}.answer.selected .letter{background:var(--brand);color:white}.qcontrols{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px}.small{font-size:.88rem;color:var(--muted)}.result-score{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:14px 0 22px}.score-circle{width:118px;height:118px;border:8px solid #dbe1ff;border-top-color:var(--brand);border-radius:50%;display:grid;place-items:center;align-content:center}.score-circle strong{font-size:2rem;line-height:1}.score-circle span{font-size:.8rem;color:var(--muted)}.domain-row{display:grid;grid-template-columns:110px 1fr 55px;align-items:center;gap:10px;margin:12px 0}.bar{height:10px;background:#e9edf5;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--brand);border-radius:99px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-weight:750;font-size:.92rem}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #cfd7e5;border-radius:10px;background:white;color:var(--ink)}.field textarea{min-height:110px;resize:vertical}.two-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.checkline{display:flex;gap:9px;align-items:flex-start;margin:12px 0;color:var(--muted);font-size:.92rem}.checkline input{margin-top:5px}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.metric{padding:15px;background:#f8f9fd;border:1px solid var(--line);border-radius:13px}.metric span{display:block;font-size:.78rem;color:var(--muted)}.metric strong{font-size:1.45rem;letter-spacing:-.04em}.tablewrap{overflow:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f5f7fb}.pill-ok{color:#146a4c;font-weight:800}.pill-warn{color:#8a5c00;font-weight:800}.faq details{padding:16px 0;border-bottom:1px solid var(--line)}.faq summary{font-weight:800;cursor:pointer}.faq details p{color:var(--muted);margin:10px 0 0}.footer{background:#101827;color:#d9e1f3;padding:36px 0}.footer-grid{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer p{color:#aebbd5;max-width:660px}.footer a{color:#dce4ff}.hidden{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.review-item{border-top:1px solid var(--line);padding:16px 0}.review-item h4{margin:0 0 6px}.review-item .correct{color:#176e50}.review-item .incorrect{color:#a12d2d}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);padding:11px 16px;background:#101827;color:white;border-radius:12px;box-shadow:var(--shadow);z-index:20;max-width:calc(100% - 24px)}@media(max-width:800px){.hero-grid,.assessment-layout,.grid2{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.sidecard{position:static}.hero{padding:48px 0}.nav{align-items:flex-start}.navlinks{gap:10px}.metric-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.nav{flex-direction:column}.navlinks{font-size:.88rem}.wrap{width:min(100% - 22px,1120px)}.section{padding:42px 0}.card{padding:17px}.question-text{font-size:1.18rem}.domain-row{grid-template-columns:85px 1fr 45px}.metric-grid{gap:8px}.metric strong{font-size:1.2rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="OpenIQ home"><span class="logo" aria-hidden="true">O</span><span>OpenIQ <span style="color:#aebcff">2.0</span></span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#principles">Principles</a><a href="#assessment">Try assessment</a><a href="#measurement">Measurement</a><a href="#validation-study">Validation study</a><a href="#research">Research lab</a><a href="#contribute">Contribute</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">A public-interest reasoning project</div>
+      <h1>Reasoning should be <span class="highlight">open to everyone.</span></h1>
+      <p>OpenIQ is built around a simple idea: a useful assessment should be transparent about what it measures, honest about what it cannot yet prove, respectful of people, and open to community improvement.</p>
+      <div class="actions"><a class="btn light" href="#assessment">Try the practice assessment <span aria-hidden="true">→</span></a><a class="btn outline" href="#principles">How we work</a></div>
+    </div>
+    <aside class="hero-note" aria-label="OpenIQ commitments">
+      <strong>People first. Evidence always.</strong>
+      <ul><li>Free to try, with no account required.</li><li>Raw results, not invented IQ scores.</li><li>Clear explanations and inspectable methods.</li><li>Community suggestions reviewed transparently.</li><li>Your answers stay in this browser unless you export them.</li></ul>
+    </aside>
+  </div>
+</section>
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Our public commitment</span><h2>For the people, with the people.</h2><p>“By the people” means more than a slogan. It means understandable rules, accessible design, a visible evidence standard, and a real route for people to propose improvements without pretending every suggestion is automatically validated.</p></div>
+    <div class="grid3">
+      <article class="card"><div class="iconbox" aria-hidden="true">◎</div><h3>Accessible by design</h3><p>Responsive layout, keyboard navigation, readable contrast, reduced-motion support, and no forced sign-up. This is a learning tool, not a gatekeeper.</p></article>
+      <article class="card"><div class="iconbox" aria-hidden="true">⌕</div><h3>Evidence over hype</h3><p>We publish the limits of the assessment. A short, unnormed item set cannot establish a person's IQ, diagnose a condition, or rank human worth.</p></article>
+      <article class="card"><div class="iconbox" aria-hidden="true">↗</div><h3>Community, with review</h3><p>Anyone can suggest a question or flag a problem. Suggestions are proposals until they are checked for clarity, bias, accessibility, and empirical performance.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="assessment">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Practice assessment</span><h2>Explore your reasoning process.</h2><p>Answer the sample items at your own pace. The question bank contains 60 original practice questions across four broad areas. It is not a standardized or professionally normed test.</p></div>
+    <div class="notice" role="note"><strong>Important interpretation note</strong>This assessment reports only your raw score on these sample questions. It does not calculate IQ, percentile rank, diagnosis, or comparison with the general population. Questions are illustrative and have not been established as a validated psychometric instrument.</div>
+    <div class="assessment-layout" style="margin-top:20px">
+      <aside class="card sidecard">
+        <strong id="progress-label">Question 1 of 60</strong><div class="progress" role="progressbar" aria-label="Assessment progress" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" id="progress"><span id="progress-bar"></span></div>
+        <div class="small" style="margin-bottom:10px">Jump to a question</div><div class="question-list" id="question-list" aria-label="Question navigation"></div>
+        <p class="small" style="margin-top:16px">No timer. Skipping is allowed. Your selections are saved locally in this browser.</p>
+        <button class="btn soft" id="reset-assessment" style="width:100%;margin-top:8px">Reset answers</button>
+      </aside>
+      <div class="card" id="question-panel">
+        <div class="question-top"><span class="tag" id="domain-tag">Pattern reasoning</span><span class="small" id="question-id">Item PRI-01</span></div>
+        <div class="question-text" id="question-prompt" tabindex="-1">Loading question…</div>
+        <div class="answers" id="answer-list"></div>
+        <div class="qcontrols"><button class="btn soft" id="prev-question">← Previous</button><div class="two-actions" style="margin:0"><button class="btn soft" id="skip-question">Skip</button><button class="btn primary" id="next-question">Next →</button></div></div>
+        <p class="small" style="margin-top:18px">Tip: choose the best answer, not the answer you think the test expects. You can change any answer before submitting.</p>
+        <div class="two-actions"><button class="btn primary" id="submit-assessment">Submit assessment</button></div>
+      </div>
+      <div class="card hidden" id="results-panel" aria-live="polite">
+        <span class="tag">Raw-score report · IQ conversion locked</span><h3 style="font-size:1.6rem;margin-top:12px">A score is information, not a definition of you.</h3>
+        <div class="result-score"><div class="score-circle"><strong id="score-value">0/12</strong><span>raw score</span></div><div><p id="score-summary" style="margin:0 0 8px"></p><span class="small" id="answered-summary"></span></div></div>
+        <h3>Performance by question category</h3><div id="domain-results"></div>
+        <div class="notice" style="margin-top:20px"><strong>What this result means</strong>It describes only your performance on these particular practice items, under your own conditions. It is not an IQ score, a percentile, or a measure of your overall potential.</div>
+        <div class="two-actions"><button class="btn primary" id="review-answers">Review explanations</button><button class="btn soft" id="export-result">Export my result (JSON)</button><button class="btn soft" id="retake-assessment">Try again</button></div>
+        <div id="answer-review" class="hidden" style="margin-top:20px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="measurement">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Measurement framework</span><h2>From practice questions to responsible measurement.</h2><p>OpenIQ separates test administration, raw-score calculation, psychometric evidence, and any future norm-referenced interpretation. The scoring pipeline is implemented; IQ conversion remains locked until defensible norms and validation evidence exist.</p></div>
+    <div class="grid2">
+      <article class="card">
+        <h3>What the website measures today</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Correct, incorrect, and unanswered items.</li>
+          <li>Overall raw score and category-level raw scores.</li>
+          <li>Completion count and response record export.</li>
+          <li>Exploratory item statistics from a pilot CSV.</li>
+        </ul>
+        <div class="notice" style="margin-top:14px"><strong>IQ conversion is not enabled</strong>A raw score cannot be converted into a valid IQ score without suitable norms and evidence supporting that interpretation. This is a deliberate scientific safeguard.</div>
+      </article>
+      <article class="card">
+        <h3>What must be verified before IQ scoring</h3>
+        <ol style="padding-left:1.2rem">
+          <li>A defined construct and controlled administration procedure.</li>
+          <li>Age-appropriate, sufficiently large and representative norm samples.</li>
+          <li>Reliability estimates and standard error of measurement.</li>
+          <li>Validity evidence for the intended use.</li>
+          <li>Fairness and accessibility analyses.</li>
+          <li>Independent psychometric review and documented versioning.</li>
+        </ol>
+      </article>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Measurement status</h3>
+      <div class="metric-grid">
+        <div class="metric"><span>Assessment items</span><strong>60</strong></div>
+        <div class="metric"><span>Domains</span><strong>4</strong></div>
+        <div class="metric"><span>Norm sample</span><strong>Not set</strong></div>
+        <div class="metric"><span>IQ conversion</span><strong>Locked</strong></div>
+      </div>
+      <p class="small">The conventional deviation-IQ equation, IQ = 100 + 15z, is meaningful only when the score is standardized against an appropriate norm distribution. OpenIQ does not infer that distribution from the current question bank or convenience pilot data.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="validation-study">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Research protocol · Draft for review</span>
+      <h2>Norming and psychometric validation study</h2>
+      <p>This is a proposed study protocol, not evidence that a study has already been conducted. OpenIQ must remain a practice assessment until qualified researchers complete the required review, data collection, analyses, and independent evaluation.</p>
+    </div>
+    <div class="notice"><strong>Research ethics gate</strong>Do not collect participant data for norming until the protocol, consent process, data-management plan, recruitment materials, and any required institutional ethics review have been approved. Do not collect names, contact details, exact birth dates, or other unnecessary identifiers in assessment datasets.</div>
+    <div class="grid2" style="margin-top:18px">
+      <article class="card">
+        <h3>Stage 1 · Define the construct</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Specify the intended constructs and target population before collecting data.</li>
+          <li>Write a test blueprint mapping each item to a construct and difficulty level.</li>
+          <li>Commission independent item review for ambiguity, accessibility, cultural and language fairness.</li>
+          <li>Document scoring rules, administration conditions, exclusion rules, and version control.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Stage 2 · Cognitive interviews and usability</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Ask a small, diverse group to explain how they interpret each item.</li>
+          <li>Identify confusing wording, unintended clues, translation issues, and inaccessible interactions.</li>
+          <li>Revise items before the main pilot; retain a change log and rationale.</li>
+          <li>Do not treat this stage as norming or validation.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Stage 3 · Pilot and item analysis</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Use a documented recruitment and sampling plan with informed consent.</li>
+          <li>Inspect missingness, item difficulty, item-total relationships, response patterns, and administration effects.</li>
+          <li>Estimate reliability with uncertainty intervals and suitable methods for the test structure.</li>
+          <li>Revise or remove defective items, then test revisions on new data where possible.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Stage 4 · Norming and validation</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Recruit a sample that represents the explicitly defined target population.</li>
+          <li>Set sample size through a statistical plan, not a convenient fixed number alone.</li>
+          <li>Evaluate validity evidence, measurement precision, subgroup fairness, and possible differential item functioning.</li>
+          <li>Develop age-based norms only if justified by the construct, design, and evidence.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Analysis plan to preregister</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Question</th><th>Planned evidence</th><th>Decision rule</th></tr></thead>
+          <tbody>
+            <tr><td>Are items functioning as intended?</td><td>Difficulty, corrected item-total statistics, distractor patterns, missingness</td><td>Predefine acceptable ranges and review outliers; do not delete items based on one statistic alone.</td></tr>
+            <tr><td>Are scores sufficiently reliable?</td><td>Appropriate reliability estimates, confidence intervals, test-retest evidence if relevant, standard error of measurement</td><td>Set requirements based on intended use before inspecting final results.</td></tr>
+            <tr><td>Are interpretations supported?</td><td>Content, internal structure, relationships with external measures, response processes</td><td>Document evidence for each intended score interpretation; reliability alone is not validity.</td></tr>
+            <tr><td>Are scores fair across groups?</td><td>Accessible administration, subgroup performance, differential item functioning where appropriate</td><td>Investigate meaningful differences; do not assume fairness from similar average scores.</td></tr>
+            <tr><td>Can norms be generalized?</td><td>Sampling frame, coverage, weighting, uncertainty, subgroup representation</td><td>Publish the population and limitations; no general-population claims from convenience samples.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:12px">This table is a planning scaffold. A qualified psychometrician must choose the actual methods and predefine decision criteria for the construct, item types, target population, and intended use.</p>
+    </div>
+    <div class="grid2" style="margin-top:18px">
+      <article class="card">
+        <h3>Participant data minimization</h3>
+        <ul style="padding-left:1.2rem">
+          <li>Collect only variables justified by the research question.</li>
+          <li>Use broad age bands when possible instead of exact dates of birth.</li>
+          <li>Keep consent records separate from pseudonymous response data.</li>
+          <li>Define access, retention, deletion, breach response, and sharing rules before recruitment.</li>
+          <li>Never publish individual-level results or small cells that could identify participants.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Release gates</h3>
+        <ol style="padding-left:1.2rem">
+          <li><strong>Gate A:</strong> protocol and item blueprint reviewed.</li>
+          <li><strong>Gate B:</strong> ethics and privacy requirements cleared.</li>
+          <li><strong>Gate C:</strong> pilot analysis and item revisions documented.</li>
+          <li><strong>Gate D:</strong> norming and validation evidence independently reviewed.</li>
+          <li><strong>Gate E:</strong> public technical manual published before any norm-based score is released.</li>
+        </ol>
+        <p class="small">Until all relevant gates are met, OpenIQ displays raw practice scores only and does not issue IQ scores or percentiles.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Open methods</span><h2>Scientific integrity, built into the product.</h2><p>Statistical calculations can help inspect pilot data. They do not turn an unvalidated item bank into a valid IQ test. OpenIQ separates exploratory research from claims about individuals.</p></div>
+    <div class="grid2">
+      <article class="card"><h3>What would a defensible IQ scale require?</h3><p>A conventional deviation-IQ scale is often expressed as <strong>IQ = 100 + 15z</strong>, where <strong>z = (X − μ) / σ</strong>. The difficult part is not the formula: it is obtaining appropriate, representative age-based norms and evidence that the test measures what it claims to measure.</p><div style="height:12px"></div><p><strong>OpenIQ does not calculate IQ</strong> because it does not currently have validated norms, reliability evidence, validity evidence, or an independently reviewed standardization study.</p></article>
+      <article class="card"><h3>Validation roadmap</h3><ol style="padding-left:1.2rem;margin-bottom:0"><li>Define constructs and blueprint the item bank.</li><li>Review items for ambiguity, accessibility, and cultural bias.</li><li>Pilot with informed consent and a documented sampling plan.</li><li>Study item difficulty, discrimination, reliability, and measurement error.</li><li>Test validity and fairness across relevant groups.</li><li>Conduct independent psychometric review before any norm-based interpretation.</li></ol></article>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Local pilot-data explorer</h3><p>Upload a CSV where each row is a participant and each item column contains 1 for correct, 0 for incorrect, and blank for missing. Do not upload names, emails, or other identifying data. Analysis runs in your browser; the file is not sent to a server by this page.</p>
+      <div class="field"><label for="pilot-file">Choose a pilot CSV file</label><input type="file" id="pilot-file" accept=".csv,text/csv"></div>
+      <div class="two-actions"><button class="btn soft" id="download-template">Download example CSV template</button><button class="btn soft" id="clear-pilot">Clear analysis</button></div>
+      <div id="pilot-output" class="hidden" aria-live="polite"></div>
+      <p class="small" style="margin-top:14px">Exploratory statistics are sensitive to sample size, missing data, sampling bias, and item design. KR-20 is an internal-consistency estimate, not proof of validity. Corrected item-total correlations can be unstable in small samples.</p>
+    </div>
+    <div class="grid3" style="margin-top:18px">
+      <article class="card"><h3>Reliability</h3><p>How consistently does the instrument measure under specified conditions? Report uncertainty and standard error of measurement, not just one coefficient.</p></article>
+      <article class="card"><h3>Validity</h3><p>Evidence must support each proposed interpretation and use. A high reliability estimate alone does not establish validity.</p></article>
+      <article class="card"><h3>Fairness</h3><p>Language, education, disability access, culture, and test-taking conditions can affect results. These effects must be investigated, not assumed away.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="contribute">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Community participation</span><h2>Help make OpenIQ better.</h2><p>Share a question proposal, flag an unclear item, suggest an accessibility improvement, or recommend a research check. This demo saves the contribution locally so you can review and export it; it does not transmit submissions to a public server.</p></div>
+    <div class="grid2">
+      <form class="card" id="contribution-form">
+        <h3>Submit a proposal</h3>
+        <div class="field"><label for="contrib-type">Type of contribution</label><select id="contrib-type" required><option value="question">New question proposal</option><option value="ambiguity">Flag ambiguity or error</option><option value="accessibility">Accessibility improvement</option><option value="research">Research or fairness concern</option><option value="feature">Feature idea</option></select></div>
+        <div class="field"><label for="contrib-title">Short title</label><input id="contrib-title" maxlength="120" required placeholder="e.g. Explain why option C is ambiguous"></div>
+        <div class="field"><label for="contrib-detail">Details</label><textarea id="contrib-detail" maxlength="3000" required placeholder="Describe the issue or proposal. For question proposals, include the prompt, options, intended answer, and reasoning."></textarea></div>
+        <label class="checkline"><input type="checkbox" id="contrib-consent" required><span>I understand this stays in this browser unless I export it. I have not included personal or sensitive information.</span></label>
+        <button class="btn primary" type="submit">Save proposal locally</button>
+        <div id="contrib-message" class="small" aria-live="polite" style="margin-top:10px"></div>
+      </form>
+      <div class="card">
+        <h3>Community proposal inbox (this device only)</h3><p>Saved proposals are stored in this browser, not shared with the project maintainers. Export them if you want to send them through a channel you trust.</p>
+        <div id="contribution-list" style="margin-top:12px"><p class="small">No proposals saved yet.</p></div>
+        <div class="two-actions"><button class="btn soft" id="export-contributions">Export proposals (JSON)</button><button class="btn danger" id="delete-contributions">Delete local proposals</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Questions people should be able to ask.</h2></div>
+    <div class="card faq">
+      <details><summary>Is this a scientifically validated IQ test?</summary><p>No. This version is a public practice and research prototype. Its items have not been normed on a representative sample or established as a standardized instrument. It must not be used for hiring, diagnosis, educational placement, or other high-stakes decisions.</p></details>
+      <details><summary>Why not show an IQ number?</summary><p>An IQ score requires a defensible norm group and evidence for the score interpretation. Applying a formula to a small convenience sample or a raw score would create false precision and could mislead people.</p></details>
+      <details><summary>Does OpenIQ collect my answers?</summary><p>This static page has no account or analytics code. Assessment selections and proposals are saved in your browser's local storage. You can export them or reset/delete them. If you host or modify the site, review any added third-party scripts and hosting logs separately.</p></details>
+      <details><summary>Can the community edit the live question bank?</summary><p>Anyone can prepare and export a proposal in this prototype, but local submissions do not automatically reach maintainers or change the published bank. A real community governance process needs a public issue tracker or submission endpoint, moderation, version history, and a documented review policy.</p></details>
+      <details><summary>What does “for the people and by the people” mean here?</summary><p>It means open access, clear limits, understandable methods, privacy-conscious defaults, and a transparent process for reviewing community proposals. It does not mean crowdsourced claims bypass evidence or professional review.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid"><div><a class="brand" href="#home"><span class="logo">O</span><span>OpenIQ 2.3</span></a><p>A public-interest reasoning project. Open to participation, accountable to evidence, and honest about uncertainty.</p></div><div><strong>Principles</strong><p><a href="#principles">Accessibility</a><br><a href="#research">Research methods</a><br><a href="#contribute">Community proposals</a></p></div><div><strong>Responsible use</strong><p>Raw scores only.<br>No validated IQ conversion.<br>No high-stakes use.</p></div></div>
+  <div class="wrap small" style="color:#9eacc6;border-top:1px solid #ffffff20;padding-top:16px;margin-top:22px">OpenIQ 2.3 · Community-minded prototype · No validated IQ conversion · © <span id="year"></span></div>
+</footer>
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+const STORAGE_KEY = "openiq-v2-state";
+const LEGACY_KEY = "openiq-question-bank-v014";
+const QUESTIONS = [
+{id:"PRI-01",domain:"Pattern reasoning",prompt:"What number comes next in the sequence? 2, 4, 8, 16, …",options:["18","24","32","34"],answer:2,explanation:"Each term doubles: 2 → 4 → 8 → 16 → 32."},
+{id:"PRI-02",domain:"Pattern reasoning",prompt:"Which item is the odd one out?",options:["Triangle","Square","Circle","Cube"],answer:3,explanation:"Cube is three-dimensional; the other shapes are commonly represented as two-dimensional plane figures."},
+{id:"PRI-03",domain:"Pattern reasoning",prompt:"If all Nors are Veks and all Veks are Lums, which statement must be true?",options:["All Lums are Nors","All Nors are Lums","No Nors are Lums","Some Veks are not Lums"],answer:1,explanation:"The relationship is transitive: Nors are within the group of Veks, and Veks within Lums, so all Nors are Lums."},
+{id:"PRI-04",domain:"Pattern reasoning",prompt:"Complete the pattern: ▲ ■ ▲ ■ ▲ …",options:["▲","■","●","◆"],answer:1,explanation:"The two symbols alternate. The next symbol is the square."},
+{id:"VCI-01",domain:"Verbal reasoning",prompt:"Choose the closest meaning of “concise.”",options:["Confusing","Brief and clear","Highly emotional","Repeated"],answer:1,explanation:"Concise means expressing something clearly in few words."},
+{id:"VCI-02",domain:"Verbal reasoning",prompt:"Book is to reading as fork is to …",options:["Drawing","Cooking","Eating","Washing"],answer:2,explanation:"A book is a tool used for reading; a fork is a tool commonly used for eating."},
+{id:"VCI-03",domain:"Verbal reasoning",prompt:"Which word does not belong with the others?",options:["Generous","Giving","Charitable","Selfish"],answer:3,explanation:"The first three relate to giving or generosity; selfish contrasts with them."},
+{id:"VCI-04",domain:"Verbal reasoning",prompt:"A claim described as “tentative” is best understood as …",options:["Certain and final","Provisional, subject to change","Impossible to test","Widely accepted"],answer:1,explanation:"Tentative means not final or fully settled, and potentially open to revision."},
+{id:"WMI-01",domain:"Working memory",prompt:"Remember this sequence: 7 – 2 – 9 – 4. What was the third number?",options:["2","4","7","9"],answer:3,explanation:"The third number in the presented sequence is 9. This item tests short-term recall only in a very limited way."},
+{id:"WMI-02",domain:"Working memory",prompt:"Start with 12, subtract 3, then add 5. What is the result?",options:["9","14","15","20"],answer:1,explanation:"12 − 3 = 9; 9 + 5 = 14."},
+{id:"PSI-01",domain:"Quantitative reasoning",prompt:"A notebook costs ₹40. A pen costs half as much as the notebook. What is the total cost?",options:["₹50","₹60","₹70","₹80"],answer:1,explanation:"Half of ₹40 is ₹20; ₹40 + ₹20 = ₹60."},
+{id:"PSI-02",domain:"Quantitative reasoning",prompt:"If 5 machines make 5 parts in 5 minutes at the same rate, how long would 10 machines take to make 10 parts?",options:["2.5 minutes","5 minutes","10 minutes","50 minutes"],answer:1,explanation:"Each machine makes one part in five minutes, so ten machines can make ten parts in five minutes."}
+
+,{id:"PRI-05",domain:"Pattern reasoning",prompt:"What number comes next? 3, 6, 12, 24, …",options:["30","36","48","60"],answer:2,explanation:"Each term doubles, so 24 × 2 = 48."}
+,{id:"PRI-06",domain:"Pattern reasoning",prompt:"What number completes the sequence? 1, 4, 9, 16, …",options:["20","24","25","36"],answer:2,explanation:"These are squares: 1², 2², 3², 4²; the next is 5² = 25."}
+,{id:"PRI-07",domain:"Pattern reasoning",prompt:"Which pair follows the same relationship as 3 : 9?",options:["4 : 8","5 : 25","6 : 18","7 : 21"],answer:1,explanation:"Nine is three squared; 25 is five squared."}
+,{id:"PRI-08",domain:"Pattern reasoning",prompt:"What comes next? A, C, E, G, …",options:["H","I","J","K"],answer:1,explanation:"The sequence skips one letter each time: A, C, E, G, I."}
+,{id:"PRI-09",domain:"Pattern reasoning",prompt:"All glips are round. No round objects are blue. Which conclusion follows?",options:["Some glips are blue","No glips are blue","All blue objects are glips","All round objects are glips"],answer:1,explanation:"Since every glip is round and no round object is blue, no glip can be blue."}
+,{id:"PRI-10",domain:"Pattern reasoning",prompt:"If today is Tuesday, what day will it be 17 days from today?",options:["Thursday","Friday","Saturday","Sunday"],answer:1,explanation:"17 days is 2 weeks plus 3 days. Tuesday plus 3 days is Friday."}
+,{id:"PRI-11",domain:"Pattern reasoning",prompt:"Choose the next number: 20, 17, 14, 11, …",options:["9","8","7","6"],answer:1,explanation:"Each term decreases by 3, so 11 − 3 = 8."}
+,{id:"PRI-12",domain:"Pattern reasoning",prompt:"A shape sequence has 1, 3, 5, 7 dots. How many dots are in the next term?",options:["8","9","10","11"],answer:1,explanation:"The sequence increases by 2 each time, so the next term has 9 dots."}
+,{id:"PRI-13",domain:"Pattern reasoning",prompt:"If P is taller than Q, and Q is taller than R, who is shortest?",options:["P","Q","R","Cannot be determined"],answer:2,explanation:"The order is P > Q > R in height, so R is shortest."}
+,{id:"PRI-14",domain:"Pattern reasoning",prompt:"Which number does not fit the pattern 4, 9, 16, 25, 30?",options:["9","16","25","30"],answer:3,explanation:"4, 9, 16, and 25 are perfect squares. 30 is not."}
+,{id:"PRI-15",domain:"Pattern reasoning",prompt:"If the code for CAT is DBU (each letter moves one forward), what is the code for DOG?",options:["EPH","EOG","CPH","FQI"],answer:0,explanation:"D→E, O→P, and G→H, giving EPH."}
+,{id:"VCI-05",domain:"Verbal reasoning",prompt:"Choose the closest meaning of “mitigate.”",options:["Intensify","Reduce the severity of","Ignore completely","Predict precisely"],answer:1,explanation:"To mitigate something is to make it less severe, harmful, or intense."}
+,{id:"VCI-06",domain:"Verbal reasoning",prompt:"Seed is to plant as egg is to …",options:["Nest","Bird","Feather","Branch"],answer:1,explanation:"A seed can develop into a plant; an egg can develop into a bird."}
+,{id:"VCI-07",domain:"Verbal reasoning",prompt:"Choose the opposite of “scarce.”",options:["Rare","Limited","Abundant","Fragile"],answer:2,explanation:"Scarce means insufficient or hard to find; abundant means plentiful."}
+,{id:"VCI-08",domain:"Verbal reasoning",prompt:"A person who is impartial is …",options:["Unfair by habit","Neutral and unbiased","Always uncertain","Strongly loyal to one side"],answer:1,explanation:"Impartial means not favouring one side over another."}
+,{id:"VCI-09",domain:"Verbal reasoning",prompt:"Which word is most closely related to “evidence”?",options:["Proof","Rumour","Guess","Preference"],answer:0,explanation:"Evidence is information or material that supports or helps establish a claim; proof is the closest option."}
+,{id:"VCI-10",domain:"Verbal reasoning",prompt:"Thermometer is to temperature as barometer is to …",options:["Wind speed","Air pressure","Rainfall","Distance"],answer:1,explanation:"A thermometer measures temperature; a barometer measures air pressure."}
+,{id:"VCI-11",domain:"Verbal reasoning",prompt:"Choose the best meaning of “ambiguous.”",options:["Having more than one possible meaning","Extremely accurate","Impossible to change","Clearly demonstrated"],answer:0,explanation:"Ambiguous language can reasonably be interpreted in more than one way."}
+,{id:"VCI-12",domain:"Verbal reasoning",prompt:"Which does not belong?",options:["Whisper","Murmur","Mutter","Sprint"],answer:3,explanation:"Whisper, murmur, and mutter are ways of speaking quietly; sprint is a way of running."}
+,{id:"VCI-13",domain:"Verbal reasoning",prompt:"Painter is to brush as writer is to …",options:["Page","Pen","Library","Story"],answer:1,explanation:"A brush is a tool used by a painter; a pen is a tool used by a writer."}
+,{id:"VCI-14",domain:"Verbal reasoning",prompt:"If a conclusion is “plausible,” it is …",options:["Impossible","Reasonable or believable","Proven beyond doubt","Unrelated to the evidence"],answer:1,explanation:"Plausible means appearing reasonable or likely, though not necessarily proven."}
+,{id:"VCI-15",domain:"Verbal reasoning",prompt:"Choose the best completion: “Although the plan was inexpensive, it was … because it failed to solve the main problem.”",options:["Effective","Ineffective","Affordable","Popular"],answer:1,explanation:"A plan that fails to solve the main problem is ineffective."}
+,{id:"WMI-03",domain:"Working memory",prompt:"Remember this sequence: 5 – 8 – 1 – 6 – 3. What was the second number?",options:["1","3","5","8"],answer:3,explanation:"The second number in the sequence is 8."}
+,{id:"WMI-04",domain:"Working memory",prompt:"Start at 30. Subtract 4 twice. What number remains?",options:["22","24","26","18"],answer:0,explanation:"30 − 4 − 4 = 22."}
+,{id:"WMI-05",domain:"Working memory",prompt:"Remember the letters: K – M – R – T. Which letter came immediately before T?",options:["K","M","R","T"],answer:2,explanation:"R comes immediately before T in the given sequence."}
+,{id:"WMI-06",domain:"Working memory",prompt:"A person has 3 red, 2 blue, and 4 green cards. How many cards are there altogether?",options:["7","8","9","10"],answer:2,explanation:"3 + 2 + 4 = 9."}
+,{id:"WMI-07",domain:"Working memory",prompt:"Keep the order in mind: 14, 6, 11, 2. Which number was immediately after 6?",options:["2","6","11","14"],answer:2,explanation:"The sequence is 14, 6, 11, 2, so 11 followed 6."}
+,{id:"WMI-08",domain:"Working memory",prompt:"A list says: tea, rice, soap, milk, bread. What was the fourth item?",options:["Rice","Soap","Milk","Bread"],answer:2,explanation:"The fourth item in the list is milk."}
+,{id:"WMI-09",domain:"Working memory",prompt:"Begin with 7, multiply by 2, then subtract 5. What is the result?",options:["7","9","12","14"],answer:1,explanation:"7 × 2 = 14, then 14 − 5 = 9."}
+,{id:"WMI-10",domain:"Working memory",prompt:"Remember the sequence 9 – 4 – 7 – 1 – 8. What was the last number?",options:["1","4","7","8"],answer:3,explanation:"The last number in the sequence is 8."}
+,{id:"WMI-11",domain:"Working memory",prompt:"A delivery route is Home → Shop → Bank → School. Which stop is third?",options:["Home","Shop","Bank","School"],answer:2,explanation:"Bank is the third stop."}
+,{id:"WMI-12",domain:"Working memory",prompt:"Start with 18. Divide by 3, then add 7. What is the result?",options:["10","11","12","13"],answer:3,explanation:"18 ÷ 3 = 6; 6 + 7 = 13."}
+,{id:"WMI-13",domain:"Working memory",prompt:"Remember the order: 2, 5, 3, 8, 6. Which number was in the middle?",options:["3","5","6","8"],answer:0,explanation:"The third of five numbers is 3."}
+,{id:"WMI-14",domain:"Working memory",prompt:"A code is 4-1-7. What is the code if its digits are read in reverse order?",options:["1-4-7","7-1-4","7-4-1","4-7-1"],answer:1,explanation:"Reversing 4-1-7 gives 7-1-4."}
+,{id:"WMI-15",domain:"Working memory",prompt:"There are 6 tasks. You finish 2, then 1 more. How many remain unfinished?",options:["2","3","4","5"],answer:1,explanation:"6 − 2 − 1 = 3 tasks remain."}
+,{id:"PSI-03",domain:"Quantitative reasoning",prompt:"What is 15% of 200?",options:["15","20","30","35"],answer:2,explanation:"0.15 × 200 = 30."}
+,{id:"PSI-04",domain:"Quantitative reasoning",prompt:"A bus travels 120 km in 3 hours at a steady speed. What is its average speed?",options:["30 km/h","40 km/h","60 km/h","90 km/h"],answer:1,explanation:"Average speed = distance ÷ time = 120 ÷ 3 = 40 km/h."}
+,{id:"PSI-05",domain:"Quantitative reasoning",prompt:"A shirt priced at ₹800 is discounted by 25%. What is the sale price?",options:["₹200","₹500","₹600","₹700"],answer:2,explanation:"25% of ₹800 is ₹200; ₹800 − ₹200 = ₹600."}
+,{id:"PSI-06",domain:"Quantitative reasoning",prompt:"What is the mean of 4, 6, 8, and 10?",options:["6","7","8","9"],answer:1,explanation:"The sum is 28; 28 ÷ 4 = 7."}
+,{id:"PSI-07",domain:"Quantitative reasoning",prompt:"If 3 notebooks cost ₹ ninety (₹90), what is the cost of 5 at the same rate?",options:["₹120","₹135","₹150","₹180"],answer:2,explanation:"One notebook costs ₹90 ÷ 3 = ₹30; five cost ₹150."}
+,{id:"PSI-08",domain:"Quantitative reasoning",prompt:"A rectangle is 8 cm long and 5 cm wide. What is its perimeter?",options:["13 cm","26 cm","40 cm","80 cm"],answer:1,explanation:"Perimeter = 2 × (8 + 5) = 26 cm."}
+,{id:"PSI-09",domain:"Quantitative reasoning",prompt:"What is the next number? 2, 5, 8, 11, …",options:["12","13","14","15"],answer:2,explanation:"The sequence increases by 3, so 11 + 3 = 14."}
+,{id:"PSI-10",domain:"Quantitative reasoning",prompt:"A tank is one-half full. After adding 20 litres, it is three-quarters full. What is the tank's capacity?",options:["40 litres","60 litres","80 litres","100 litres"],answer:2,explanation:"The added 20 litres represents one-quarter of capacity, so total capacity is 20 × 4 = 80 litres."}
+,{id:"PSI-11",domain:"Quantitative reasoning",prompt:"A team has 12 members. One-third are absent. How many are present?",options:["4","6","8","9"],answer:2,explanation:"One-third of 12 is 4 absent; 12 − 4 = 8 present."}
+,{id:"PSI-12",domain:"Quantitative reasoning",prompt:"A recipe uses 2 cups of flour for 8 servings. How many cups are needed for 20 servings at the same ratio?",options:["4","5","6","8"],answer:1,explanation:"20 servings is 2.5 times 8 servings; 2 × 2.5 = 5 cups."}
+,{id:"PSI-13",domain:"Quantitative reasoning",prompt:"What is the probability of rolling an even number on a fair six-sided die?",options:["1/6","1/3","1/2","2/3"],answer:2,explanation:"The even outcomes are 2, 4, and 6: 3 of 6 equally likely outcomes, or 1/2."}
+,{id:"PSI-14",domain:"Quantitative reasoning",prompt:"A number is increased from 50 to 65. What is the percentage increase?",options:["15%","20%","30%","35%"],answer:2,explanation:"The increase is 15; 15 ÷ 50 × 100 = 30%."}
+,{id:"PSI-15",domain:"Quantitative reasoning",prompt:"If x + 7 = 19, what is x?",options:["10","11","12","13"],answer:2,explanation:"Subtract 7 from both sides: x = 19 − 7 = 12."}
+
+];
+const $ = id => document.getElementById(id);
+let current = 0, answers = Array(QUESTIONS.length).fill(null), submitted = false;
+function showToast(message){const el=$("toast");el.textContent=message;el.classList.remove("hidden");clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>el.classList.add("hidden"),2800)}
+function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,submitted}));}catch(e){}}
+function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const s=JSON.parse(raw);if(Array.isArray(s.answers)&&s.answers.length===QUESTIONS.length)answers=s.answers.map(v=>Number.isInteger(v)&&v>=0&&v<4?v:null);current=Math.max(0,Math.min(QUESTIONS.length-1,Number(s.current)||0));submitted=!!s.submitted;}else if(localStorage.getItem(LEGACY_KEY)){/* Legacy question-bank data is not trusted as answer state. */}}catch(e){answers=Array(QUESTIONS.length).fill(null)}}
+function renderNav(){const list=$("question-list");list.innerHTML="";QUESTIONS.forEach((q,i)=>{const b=document.createElement("button");b.className="qjump"+(i===current?" current":"")+(answers[i]!==null?" answered":"");b.textContent=i+1;b.setAttribute("aria-label",`Go to question ${i+1}${answers[i]!==null?", answered":""}`);b.addEventListener("click",()=>{current=i;renderQuestion();});list.appendChild(b)});const count=answers.filter(a=>a!==null).length;$("progress-label").textContent=`Question ${current+1} of ${QUESTIONS.length} · ${count} answered`;$("progress-bar").style.width=(count/QUESTIONS.length*100)+"%";$("progress").setAttribute("aria-valuenow",String(count))}
+function renderQuestion(){if(submitted){renderResults();return}const q=QUESTIONS[current];$("question-panel").classList.remove("hidden");$("results-panel").classList.add("hidden");$("domain-tag").textContent=q.domain;$("question-id").textContent="Item "+q.id;$("question-prompt").textContent=q.prompt;const list=$("answer-list");list.innerHTML="";q.options.forEach((option,i)=>{const b=document.createElement("button");b.type="button";b.className="answer"+(answers[current]===i?" selected":"");b.setAttribute("aria-pressed",answers[current]===i?"true":"false");const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);const txt=document.createElement("span");txt.textContent=option;b.append(letter,txt);b.addEventListener("click",()=>{answers[current]=i;saveState();renderQuestion();});list.appendChild(b)});$("prev-question").disabled=current===0;$("next-question").textContent=current===QUESTIONS.length-1?"Last question":"Next →";renderNav();saveState()}
+function submitAssessment(){submitted=true;saveState();renderResults();$("results-panel").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+function renderResults(){ $("question-panel").classList.add("hidden");$("results-panel").classList.remove("hidden");const answered=answers.filter(a=>a!==null).length;const correct=QUESTIONS.reduce((n,q,i)=>n+(answers[i]===q.answer?1:0),0);$("score-value").textContent=`${correct}/${QUESTIONS.length}`;$("score-summary").textContent=`You answered ${correct} of ${QUESTIONS.length} sample items correctly.`;$("answered-summary").textContent=`${answered} answered · ${QUESTIONS.length-answered} skipped. Skipped items count as not correct in the raw total.`;const domains=[...new Set(QUESTIONS.map(q=>q.domain))];$("domain-results").innerHTML="";domains.forEach(d=>{const qs=QUESTIONS.map((q,i)=>({q,i})).filter(x=>x.q.domain===d);const n=qs.filter(x=>answers[x.i]===x.q.answer).length;const row=document.createElement("div");row.className="domain-row";const label=document.createElement("strong");label.textContent=d;const bar=document.createElement("div");bar.className="bar";const fill=document.createElement("span");fill.style.width=(n/qs.length*100)+"%";bar.appendChild(fill);const score=document.createElement("span");score.textContent=`${n}/${qs.length}`;row.append(label,bar,score);$("domain-results").appendChild(row)});$("answer-review").classList.add("hidden");$("review-answers").textContent="Review explanations";renderNav()}
+function reviewAnswers(){const box=$("answer-review");if(!box.classList.contains("hidden")){box.classList.add("hidden");$("review-answers").textContent="Review explanations";return}box.innerHTML="<h3>Answer review</h3>";QUESTIONS.forEach((q,i)=>{const wrap=document.createElement("div");wrap.className="review-item";const h=document.createElement("h4");h.textContent=`${i+1}. ${q.prompt}`;const p=document.createElement("p");p.className=answers[i]===q.answer?"correct":"incorrect";p.textContent=`Your answer: ${answers[i]===null?"Skipped":String.fromCharCode(65+answers[i])+". "+q.options[answers[i]]} · Correct answer: ${String.fromCharCode(65+q.answer)}. ${q.options[q.answer]}`;const e=document.createElement("p");e.className="small";e.textContent=q.explanation;wrap.append(h,p,e);box.appendChild(wrap)});box.classList.remove("hidden");$("review-answers").textContent="Hide explanations"}
+function download(name,content,type="application/json"){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportResult(){const payload={product:"OpenIQ",version:"2.3",assessment_type:"unvalidated practice assessment",exported_at:new Date().toISOString(),raw_score:QUESTIONS.reduce((n,q,i)=>n+(answers[i]===q.answer?1:0),0),item_count:QUESTIONS.length,answered_count:answers.filter(a=>a!==null).length,iq_score:null,percentile:null,measurement_status:"raw_score_only_norms_not_established",warning:"Not a standardized IQ test. No validated IQ conversion or population norm is available.",responses:QUESTIONS.map((q,i)=>({id:q.id,domain:q.domain,response:answers[i]===null?null:q.options[answers[i]],correct:answers[i]===q.answer,answer:q.options[q.answer],explanation:q.explanation}))};download("openiq-practice-result.json",JSON.stringify(payload,null,2))}
+function resetAssessment(){if(!confirm("Reset all answers for this practice assessment?"))return;answers=Array(QUESTIONS.length).fill(null);current=0;submitted=false;saveState();renderQuestion()}
+$("prev-question").addEventListener("click",()=>{current=Math.max(0,current-1);renderQuestion()});$("next-question").addEventListener("click",()=>{current=Math.min(QUESTIONS.length-1,current+1);renderQuestion()});$("skip-question").addEventListener("click",()=>{current=Math.min(QUESTIONS.length-1,current+1);renderQuestion()});$("submit-assessment").addEventListener("click",()=>{if(answers.some(a=>a===null)&&!confirm("Some questions are unanswered. Submit anyway? Unanswered items count as not correct in the raw total."))return;submitAssessment()});$("reset-assessment").addEventListener("click",resetAssessment);$("review-answers").addEventListener("click",reviewAnswers);$("export-result").addEventListener("click",exportResult);$("retake-assessment").addEventListener("click",()=>{answers=Array(QUESTIONS.length).fill(null);current=0;submitted=false;saveState();renderQuestion();$("question-panel").scrollIntoView({behavior:"smooth",block:"start"})});
+$("download-template").addEventListener("click",()=>download("openiq-pilot-template.csv","participant_id,PRI_01,PRI_02,PRI_03,PRI_04,VCI_01,VCI_02,VCI_03,VCI_04,WMI_01,WMI_02,PSI_01,PSI_02\\nP001,1,1,0,1,1,1,0,1,1,0,1,1\\nP002,1,0,1,1,1,0,1,1,0,1,1,0\\nP003,0,1,1,1,0,1,1,0,1,1,0,1\\nP004,1,1,1,0,1,1,1,1,1,0,1,1\\nP005,1,0,1,1,1,0,1,0,0,1,1,1\\n","text/csv"));
+function parseCSV(text){text=text.replace(/^\\uFEFF/,"");const rows=[];let row=[],field="",quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){field+='"';i++}else if(c==='"')quoted=false;else field+=c;}else if(c==='"')quoted=true;else if(c===","){row.push(field.trim());field=""}else if(c==="\\n"){row.push(field.trim());if(row.some(v=>v!==""))rows.push(row);row=[];field=""}else if(c!=="\\r")field+=c;}row.push(field.trim());if(row.some(v=>v!==""))rows.push(row);if(quoted)throw new Error("CSV has an unclosed quoted field.");return rows}
+function correlation(a,b){if(a.length<3)return null;const ma=a.reduce((x,y)=>x+y,0)/a.length,mb=b.reduce((x,y)=>x+y,0)/b.length;let num=0,da=0,db=0;for(let i=0;i<a.length;i++){num+=(a[i]-ma)*(b[i]-mb);da+=(a[i]-ma)**2;db+=(b[i]-mb)**2}return da===0||db===0?null:num/Math.sqrt(da*db)}
+function analyzePilot(text){const rows=parseCSV(text);if(rows.length<3)throw new Error("Include a header row and at least two participant rows.");const header=rows[0];if(header.length<3)throw new Error("Need a participant identifier column and at least two item columns.");const data=rows.slice(1).filter(r=>r.some(v=>v!==""));if(data.length<2)throw new Error("At least two participant rows are required.");if(data.some(r=>r.length!==header.length))throw new Error("Rows have different numbers of columns. Check your CSV formatting.");const cols=header.slice(1).map((name,j)=>{const vals=data.map(r=>r[j+1]);const present=vals.filter(v=>v!=="");if(present.some(v=>v!=="0"&&v!=="1"))throw new Error(`Item column "${name}" must contain only 1, 0, or blank values.`);const numeric=vals.map(v=>v===""?null:Number(v));return{name,vals:numeric,missing:numeric.filter(v=>v===null).length,n:present.length,p:present.length?present.reduce((s,v)=>s+Number(v),0)/present.length:null}});const validRows=data.map(r=>r.slice(1).map(v=>v===""?null:Number(v)));const complete=validRows.filter(r=>r.every(v=>v!==null));const k=cols.length;let kr=null;if(complete.length>=2&&k>=2){const totals=complete.map(r=>r.reduce((s,v)=>s+v,0));const mean=totals.reduce((s,v)=>s+v,0)/totals.length;const totalVar=totals.reduce((s,v)=>s+(v-mean)**2,0)/totals.length;const sumVar=complete[0].reduce((s,_,j)=>{const vals=complete.map(r=>r[j]);const m=vals.reduce((a,b)=>a+b,0)/vals.length;return s+vals.reduce((a,b)=>a+(b-m)**2,0)/vals.length},0);if(totalVar>0)kr=(k/(k-1))*(1-sumVar/totalVar)}const items=cols.map((c,j)=>{const pairs=[];validRows.forEach((r,i)=>{if(r[j]!==null){const other=r.reduce((s,v,ix)=>s+(ix!==j&&v!==null?v:0),0);const count=r.filter(v=>v!==null&&true).length; if(count>=2)pairs.push([r[j],other])}});return{...c,difficulty:c.p,correctedItemTotal:correlation(pairs.map(p=>p[0]),pairs.map(p=>p[1]))}});return{nParticipants:data.length,nComplete:complete.length,nItems:k,kr20:kr,missingRate:cols.reduce((s,c)=>s+c.missing,0)/(data.length*k),items}}
+function renderPilot(result){const out=$("pilot-output");out.classList.remove("hidden");out.innerHTML="";const metrics=document.createElement("div");metrics.className="metric-grid";const vals=[["Participant rows",result.nParticipants],["Complete rows",result.nComplete],["Item columns",result.nItems],["Missing responses",(result.missingRate*100).toFixed(1)+"%"]];if(result.kr20!==null)vals.push(["Exploratory KR-20",result.kr20.toFixed(3)]);vals.forEach(([label,value])=>{const el=document.createElement("div");el.className="metric";const s=document.createElement("span");s.textContent=label;const b=document.createElement("strong");b.textContent=value;el.append(s,b);metrics.appendChild(el)});out.appendChild(metrics);const note=document.createElement("p");note.className="notice";note.textContent=result.nComplete<30?"Small-sample caution: fewer than 30 complete rows. Item statistics and reliability estimates are highly unstable at this size.": "These remain exploratory sample statistics. Sample size alone does not establish representativeness or validity.";out.appendChild(note);const wrap=document.createElement("div");wrap.className="tablewrap";const table=document.createElement("table");const thead=document.createElement("thead");thead.innerHTML="<tr><th>Item column</th><th>Difficulty (p)</th><th>Corrected item-total r</th><th>Missing</th><th>Observed n</th></tr>";table.appendChild(thead);const tbody=document.createElement("tbody");result.items.forEach(item=>{const tr=document.createElement("tr");[item.name,item.difficulty===null?"—":item.difficulty.toFixed(3),item.correctedItemTotal===null?"—":item.correctedItemTotal.toFixed(3),item.missing,item.n].forEach(v=>{const td=document.createElement("td");td.textContent=String(v);tr.appendChild(td)});tbody.appendChild(tr)});table.appendChild(tbody);wrap.appendChild(table);out.appendChild(wrap);const exp=document.createElement("button");exp.className="btn soft";exp.textContent="Export analysis JSON";exp.style.marginTop="12px";exp.addEventListener("click",()=>download("openiq-pilot-analysis.json",JSON.stringify({product:"OpenIQ",version:"2.3",generated_at:new Date().toISOString(),interpretation:"Exploratory pilot statistics only; not validation or norming.",...result},null,2)));out.appendChild(exp)}
+$("pilot-file").addEventListener("change",async e=>{const file=e.target.files&&e.target.files[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error("Please use a CSV smaller than 5 MB.");const result=analyzePilot(await file.text());renderPilot(result)}catch(err){$("pilot-output").classList.remove("hidden");$("pilot-output").textContent="Could not analyze CSV: "+err.message}e.target.value=""});$("clear-pilot").addEventListener("click",()=>{$("pilot-output").innerHTML="";$("pilot-output").classList.add("hidden");$("pilot-file").value=""});
+const CONTRIB_KEY="openiq-v2-contributions";function getContributions(){try{const x=JSON.parse(localStorage.getItem(CONTRIB_KEY)||"[]");return Array.isArray(x)?x:[]}catch(e){return[]}}
+function renderContributions(){const list=$("contribution-list"),items=getContributions();list.innerHTML="";if(!items.length){list.innerHTML='<p class="small">No proposals saved yet.</p>';return}items.forEach((item,i)=>{const box=document.createElement("div");box.className="review-item";const h=document.createElement("h4");h.textContent=item.title;const p=document.createElement("p");p.className="small";p.textContent=`${item.type} · ${new Date(item.createdAt).toLocaleString()}`;const d=document.createElement("p");d.textContent=item.detail;box.append(h,p,d);list.appendChild(box)})}
+$("contribution-form").addEventListener("submit",e=>{e.preventDefault();const item={type:$("contrib-type").value,title:$("contrib-title").value.trim(),detail:$("contrib-detail").value.trim(),createdAt:new Date().toISOString()};if(!item.title||!item.detail||!$("contrib-consent").checked)return;const items=getContributions();items.unshift(item);try{localStorage.setItem(CONTRIB_KEY,JSON.stringify(items));$("contrib-message").textContent="Saved on this device. It has not been sent to maintainers.";e.target.reset();renderContributions()}catch(err){$("contrib-message").textContent="Could not save locally. Your browser storage may be full or disabled."}});
+$("export-contributions").addEventListener("click",()=>download("openiq-community-proposals.json",JSON.stringify(getContributions(),null,2)));$("delete-contributions").addEventListener("click",()=>{if(confirm("Permanently delete proposals stored by this page in this browser?")){localStorage.removeItem(CONTRIB_KEY);renderContributions();$("contrib-message").textContent="Local proposals deleted."}});
+$("year").textContent=new Date().getFullYear();loadState();renderQuestion();renderContributions();
+</script>
+</body>
+</html>
